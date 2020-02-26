@@ -1,4 +1,4 @@
 saada_serv ansible_host=10.5.169.235 ansible_user=root
 
-[group=wordpress]
+[wordpress]
 saada_serv
