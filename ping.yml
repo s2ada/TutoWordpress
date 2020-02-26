@@ -1,0 +1,8 @@
+---
+
+- name: ping
+  hosts: wordpress
+  become: yes
+  tasks:
+    - name: toto
+    ping:
