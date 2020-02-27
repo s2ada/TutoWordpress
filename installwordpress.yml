@@ -59,7 +59,7 @@
 
     - name: Output new root password
       debug:
-        msg: "New root password is {{mysql_new_root_pass.stdout}}"
+        msg: "New root password is {{ mysql_new_root_pass.stdout }}"
 
     - name: Update root password
       mysql_user:
