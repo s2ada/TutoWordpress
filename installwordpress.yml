@@ -26,3 +26,7 @@
   package:
     name: apache2
     state: absent
+
+- name: Add the ondrej PHP PPA
+  apt_repository:
+    repo: 'ppa:ondrej/php'
