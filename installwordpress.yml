@@ -37,7 +37,6 @@
       loop:
         - mysql-server
         - python-mysqldb
-        - MySQL-python
 
 
     - name: Generate new root password
