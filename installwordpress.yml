@@ -129,8 +129,9 @@
 - set_fact:
     fpm_sock: /run/php/php7.{{ php_version.stdout.split(" ")[1].split(".")[1] }}-fpm.sock
 
-   handlers:
-    - name: restart nginx
-      service:
-        name: nginx
-        state: restarted
+
+  handlers:
+      - name: restart nginx
+        service:
+          name: nginx
+          state: restarted
