@@ -101,4 +101,22 @@
     - name: Output new root password
       debug:
         msg: "New root password is {{mysql_new_root_pass.stdout}}"
-      when: mysql_new_root_pass.changed       
+      when: mysql_new_root_pass.changed
+
+
+    - name: Install nginx
+      package:
+        name: nginx
+        state: present
+
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+
+        
+    - name: Create nginx config
+      template:
+        src: templates/nginx/default.j2
+        dest: /etc/nginx/sites-available/default
