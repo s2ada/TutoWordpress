@@ -28,3 +28,31 @@
       package:
         name: apache2
         state: absent
+
+# MySQL
+    - name: Install MySQL
+      package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - mysql-server
+        - python-mysqldb
+
+
+    - name: Generate new root password
+      command: openssl rand -hex 7
+      args:
+        creates: /root/.my.cnf
+      register: mysql_new_root_pass
+
+
+    - name: Remove anonymous users
+      mysql_user:
+        name: ""
+        state: absent
+
+
+    - name: Remove test database
+      mysql_db:
+        name: test
+        state: absent
