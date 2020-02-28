@@ -6,6 +6,16 @@
       tasks:
         - name: ping_machine_cible
           ping:
+
+
+# TOOLS
+        - name: Install required tools
+          apt:
+            name:
+              - unzip
+            state: present
+
+
 #PHP
         - name: Add the ondrej PHP PPA
           apt_repository:
@@ -132,10 +142,3 @@
             host: localhost
             password: bananas
             priv: wordpress.*:ALL
-
-# TOOLS
-        - name: Install required tools
-          apt:
-            name:
-              - unzip
-            state: present
