@@ -132,3 +132,10 @@
             host: localhost
             password: bananas
             priv: wordpress.*:ALL
+
+# TOOLS
+        - name: Install required tools
+          apt:
+            name:
+              - unzip
+            state: present
