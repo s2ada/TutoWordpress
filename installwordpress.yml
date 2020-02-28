@@ -122,11 +122,11 @@
             creates: /var/www/book.example.com/wp-settings.php
 
 
-         - name: Create WordPress MySQL database
+        - name: Create WordPress MySQL database
            mysql_db:
               name: wordpress
               state: present
-          - name: Create WordPress MySQL user
+        - name: Create WordPress MySQL user
             mysql_user:
               name: wordpress
               host: localhost
