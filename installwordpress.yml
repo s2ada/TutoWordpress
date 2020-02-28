@@ -123,12 +123,12 @@
 
 
         - name: Create WordPress MySQL database
-            mysql_db:
-              name: wordpress
-              state: present
+          mysql_db:
+            name: wordpress
+            state: present
         - name: Create WordPress MySQL user
-            mysql_user:
-              name: wordpress
-              host: localhost
-              password: bananas
-              priv: wordpress.*:ALL
+          mysql_user:
+            name: wordpress
+            host: localhost
+            password: bananas
+            priv: wordpress.*:ALL
