@@ -143,13 +143,13 @@
 
         - name: Copy WordPress DB
           copy:
-            src: templates/wordpress/wp-config.php.jinj2
-            dest: /tmp/wp-config.php.jinj2
+            src: files/wp-database.sql
+            dest: /tmp/wp-database.sql
           when: db_exist.rc > 0
 
         - name: Import WordPress DB
           mysql_db:
-            target: /tmp/wp-config.php.jinj2
+            target: /tmp/wp-database.sql
             state: import
             name: wordpress
           when: db_exist.rc > 0
