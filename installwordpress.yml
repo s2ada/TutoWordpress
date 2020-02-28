@@ -123,7 +123,7 @@
 
 
         - name: Create WordPress MySQL database
-           mysql_db:
+            mysql_db:
               name: wordpress
               state: present
         - name: Create WordPress MySQL user
